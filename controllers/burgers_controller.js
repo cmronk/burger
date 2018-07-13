@@ -16,22 +16,24 @@ router.get("/burgers", function (req, res) {
     });
 });
 
-router.post("/api/burgers", function (req, res) {
+router.post("/burgers/insertOne", function (req, res) {
     burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, false], function () {
+        // res.json({ id: res.insertId });
         res.redirect("/burgers");
-        // res.json({ id: result.insertId });
+
     });
 });
 
-router.put("/api/burgers/:id", function (req, res) {
+router.put("/burgers/updateOne/:id", function (req, res) {
     var condition = "id = " + req.params.id;
-    console.log(req.params.id);
+    // console.log(req.params.id);
     // console.log("condition", condition);
 
     burger.updateOne({
-        devoured: req.body.devoured
-    }, condition, function (result) {
-        if (result.changedRows === 0) {
+        devoured: true
+    }, condition, function () {
+        res.redirect("/burgers");
+        if (res.changedRows === 0) {
             return res.status(404).end();
         } else {
             res.status(200).end();

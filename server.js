@@ -1,11 +1,16 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+// on cats youtube
+var methodOverride = require("method-override");
 
 var PORT = process.env.PORT || 8080;
 
 var app = express();
 
 app.use(express.static("public"));
+// from cats video
+// app.use(express.static(process.cwd() * "/public"));
+app.use(methodOverride("_method"));
 
 app.use(bodyParser.urlencoded({ extended: true}));
 
