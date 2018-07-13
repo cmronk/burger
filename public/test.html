@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EAT the burgers</title>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Satisfy', cursive;
+            color:orange;
+        }
+
+        .jumbotron {
+            background: #d4eaea;
+            color: navy;
+        }
+        button {
+            background: #d4eaea;
+            color: navy;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4"> <img src="../public/assets/img/burger.png" alt="burger" height="200px" width="200px">Devour the Burger!</h1>
+            <h2>Eat all you want, no calories!</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Burgers to be devoured</h2>
+            <hr>
+            <ul>
+
+                <p>Test Burgers
+                    <button class="eat-burger" data-id="{{this.id}}">EAT ME!</button>
+                </p>
+                <p>Test Burgers
+                    <button class="eat-burger" data-id="{{this.id}}">EAT ME!</button>
+                </p>
+                <p>Test Burgers
+                    <button class="eat-burger" data-id="{{this.id}}">EAT ME!</button>
+                </p>
+            </ul>
+
+        </div>
+        <div class="col-md-6">
+
+            <h2>Burgers eaten up</h2>
+            <hr>
+            <ul>
+                <p>Test Burgers
+                    <button class="eat-burger" data-id="{{this.id}}">EAT ME!</button>
+                </p>
+                <p>Test Burgers
+                    <button class="eat-burger" data-id="{{this.id}}">EAT ME!</button>
+                </p>
+                <p>Test Burgers
+                    <button class="eat-burger" data-id="{{this.id}}">EAT ME!</button>
+                </p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Add a burgie</h2>
+            <form class="create-form">
+
+                <div class="form-group">
+                    <label for="burgerInput">Burger:</label>
+                    <input type="text" id="burgerInput" name="burgerName">
+                </div>
+
+                <br>
+                <button type="submit" id="addBurger">Add Burger</button>
+
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
