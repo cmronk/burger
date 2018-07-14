@@ -9,16 +9,6 @@
   <div class="col-md-6">
     <h2>Burgers to be devoured</h2>
     <hr>
-      {{!-- {{#each burgers}} 
-        {{#unless this.devoured}}
-          <ul>{{this.burger_name}}
-            <form action="burgers/updateOne/{{this.id}}?_method=PUT" method="POST">
-              <input type="hidden" name="devoured" value="true">
-              <button type="submit">Eat me!</button>
-            </form>
-          </ul>  
-        {{/unless}} 
-      {{/each}} --}}
     <ul>       
         {{#each burgers}} 
           {{#unless devoured}}
