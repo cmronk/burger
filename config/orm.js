@@ -1,6 +1,5 @@
 var connection = require("./connection.js");
 
-// copied from cats example
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
 // In order to write the query, we need 3 question marks.
@@ -25,12 +24,10 @@ function printQuestionMarks(num) {
       var value = ob[key];
       // check to skip hidden properties
       if (Object.hasOwnProperty.call(ob, key)) {
-        // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+        // if string with spaces, add quotations 
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
-        // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
         arr.push(key + "=" + value);
       }
     }
@@ -39,7 +36,6 @@ function printQuestionMarks(num) {
     return arr.toString();
   }
 
-//   my code
 var orm = {
 
     // we will need these methods
@@ -60,11 +56,8 @@ var orm = {
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        // y tho?
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
-
-        // console.log(queryString);
 
         connection.query(queryString, vals, function (err, result) {
             if (err) {
@@ -83,7 +76,6 @@ var orm = {
         queryString += " WHERE ";
         queryString += condition;
 
-        // console.log(queryString);
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;

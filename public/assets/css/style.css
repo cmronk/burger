@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    font-family: 'Satisfy', cursive;
+    color:orange;
+}
+
+.jumbotron {
+    background: #d4eaea;
+    color: navy;
+}
+button {
+    background: #d4eaea;
+    color: navy;
+}
